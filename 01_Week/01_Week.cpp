@@ -30,6 +30,7 @@ int main()
     std::cout << "\nvalue of ptr Variable = " << iPtr << " address = " << &iPtr;
     std::cout << "\nSize of iPtr = " << sizeof(iPtr);
     std::cout << "\nvalue lVal points to is " << *(&lVal + 1);
+    std::cout << "test";
 }
 //Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
