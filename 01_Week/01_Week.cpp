@@ -31,6 +31,18 @@ int main()
     std::cout << "\nSize of iPtr = " << sizeof(iPtr);
     std::cout << "\nvalue lVal points to is " << *(&lVal + 1);
     std::cout << "test";
+
+    // Heap Memory
+    char* chTemp = NULL;
+    chTemp = (char*)malloc(20);
+    memset(chTemp, '\0', 20);
+    //memset(chTemp, NULL, 20);
+    //Do Stuff with the memory, then 
+    free(chTemp);
+    chTemp = NULL; //good Practice
+
+    std::cout << "\n\n End of Program ";
+
 }
 //Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
