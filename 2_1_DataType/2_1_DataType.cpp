@@ -2,10 +2,33 @@
 //
 
 #include <iostream>
+#include "Employee.h"
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "2_1_DataTypes Hello World!\n";
+    Employee workers[4];
+    workers[0].age = 23;
+
+    Employee* empPtr = new Employee(); //Heap
+    //empPtr = NULL;
+    //empPtr = &workers[0];
+    empPtr->age = 42;
+
+    void* ptr = malloc(20);
+    int* intPtr = new int;
+
+    *intPtr = 42;
+    printf("\n x%00.x", *intPtr);
+    printf("\n x%00.x", *(intPtr + 1));
+    //do stuff heap memory
+    cout << sizeof(Employee);
+
+    delete empPtr;
+
+    cout << "\n size1: " << (sizeof(workers)) / sizeof(workers[0]);
+    cout << "\n size2: " << std::size(workers);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

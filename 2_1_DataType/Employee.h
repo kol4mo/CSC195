@@ -8,7 +8,7 @@ public:
 
 public: 
 	Employee();
-	void read();
+	void Read();
 	void Write();
 };
 
