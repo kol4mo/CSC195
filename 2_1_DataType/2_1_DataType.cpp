@@ -7,28 +7,44 @@ using namespace std;
 
 int main()
 {
-    std::cout << "2_1_DataTypes Hello World!\n";
-    Employee workers[4];
-    workers[0].age = 23;
+    const unsigned short MAXEMP = 20;
 
-    Employee* empPtr = new Employee(); //Heap
+    std::cout << "2_1_DataTypes Hello World!\n";
+    
+    Employee workers[MAXEMP];
+    unsigned short numEmployees = 0;
+
+    cout << "\n Please enter the number of employees: ";
+    cin >> numEmployees;
+    if (numEmployees > MAXEMP) {
+        numEmployees = MAXEMP;
+    }
+
+    for (int iCount = 0; iCount < numEmployees; iCount++) {
+        //Call read for each employee
+    }
+    
+    //workers[0].age = 23;
+    //workers[0].Read;
+
+    //Employee* empPtr = new Employee(); //Heap
     //empPtr = NULL;
     //empPtr = &workers[0];
-    empPtr->age = 42;
+    //empPtr->age = 42;
 
-    void* ptr = malloc(20);
-    int* intPtr = new int;
+    //void* ptr = malloc(20);
+    //int* intPtr = new int; //if you use new it is on the heap
 
-    *intPtr = 42;
-    printf("\n x%00.x", *intPtr);
-    printf("\n x%00.x", *(intPtr + 1));
+    //*intPtr = 42;
+    //printf("\n x%00.x", *intPtr);
+    //printf("\n x%00.x", *(intPtr + 1));
     //do stuff heap memory
-    cout << sizeof(Employee);
+    //cout << sizeof(Employee);
 
-    delete empPtr;
+    //elete empPtr;
 
-    cout << "\n size1: " << (sizeof(workers)) / sizeof(workers[0]);
-    cout << "\n size2: " << std::size(workers);
+    //cout << "\n size1: " << (sizeof(workers)) / sizeof(workers[0]);
+    //cout << "\n size2: " << std::size(workers);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
