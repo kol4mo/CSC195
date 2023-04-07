@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
     const unsigned short MAXEMP = 20;
+    const Employee tempEmployee;
 
     std::cout << "2_1_DataTypes Hello World!\n";
     
@@ -22,16 +23,24 @@ int main()
 
     for (int iCount = 0; iCount < numEmployees; iCount++) {
         //Call read for each employee
+        //workers[iCount] = new Employee;
+        //(*(workers[iCount])).Read();
+        workers[iCount].Read();
+    }
+
+    for (int iCount = 0; iCount < numEmployees; iCount++) {
+        //Call Write for each employee
+        workers[iCount].Write();
+        //(*(workers[iCount])).Write();
     }
     
     //workers[0].age = 23;
-    //workers[0].Read;
+    //workers[0].Read();
 
     //Employee* empPtr = new Employee(); //Heap
     //empPtr = NULL;
     //empPtr = &workers[0];
-    //empPtr->age = 42;
-
+    //empPtr->age = 42
     //void* ptr = malloc(20);
     //int* intPtr = new int; //if you use new it is on the heap
 
