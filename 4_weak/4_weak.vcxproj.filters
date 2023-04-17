@@ -15,24 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3_2_memory_review.cpp">
+    <ClCompile Include="4_weak.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="myBase.cpp">
+    <ClCompile Include="MyInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyDerived.cpp">
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bird.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyConfig.h">
+    <ClInclude Include="MyInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="myBase.h">
+    <ClInclude Include="Animal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MyDerived.h">
+    <ClInclude Include="Fish.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bird.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

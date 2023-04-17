@@ -101,10 +101,25 @@ int main()
 		cout << "\n" << &intPtr2[iCount];
 	}
 		// deallocate the int pointer to free up the memory block (remember it's an array)
+	free(intPtr2);
+	intPtr2 = NULL;
 		// ** STRUCTURE **
 		//
 		// create a Person pointer that points at an array of Persons allocated on the heap, the array size should be 2
+	Person* personPtr = new Person[2];
 		// read in a name from the console and set it to the person name, do this for the id also, do this for both Persons
+	for (int iCount = 0; iCount < 2; iCount++) {
+		cout << "\nWhats Persons " << iCount << " name: ";
+		cin >> personPtr[iCount].name;
+		cout << "\nWhats " << personPtr[iCount].name << "'s ID: ";
+		cin >> personPtr[iCount].id;
+	}
 		// use a for loop and output the name and id of each person in the array
+	for (int iCount = 0; iCount < 2; iCount++) {
+		cout << "\nName: " << personPtr[iCount].name;
+		cout << "\nID: " << personPtr[iCount].id;
+	}
 		// deallocate the person pointer to free up the memory block (remember it's an array)
+	free(intPtr2);
+	intPtr2 = NULL;
 }

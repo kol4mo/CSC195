@@ -10,7 +10,8 @@ public:
 	float fGrossPay = 0; // calc - total hours * wage
 	float netPay = 0;// calc - (gross pay - (gross Pay * tax))
 public: 
-	Employee();
+	Employee();//constructor
+	~Employee();//destructor
 	void Read();
 	void Write();
 };
