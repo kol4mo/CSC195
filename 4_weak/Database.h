@@ -14,6 +14,7 @@ public:
 	void DisplayAll(std::ostream& ostr);
 	void DisplayByName(std::ostream& ostr, std::istream& istr);
 	void DisplayByType(std::ostream& ostr, Animal::eType type);
+	void removeAll();
 	void Save(const string filename);
 	void load(const string& filename);
 	const string filename = "testFile.txt";

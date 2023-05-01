@@ -57,10 +57,14 @@ void Database::Save(const string filename) {
 	}
 }
 
+void Database::removeAll() {
+	this->animal.clear();
+}
+
 void Database::load(const string& filename) {
 	//open file
 	std::ofstream output(filename); //bitwise or
-	//this->RemoveAll();
+	this->removeAll();
 
 	if (output.is_open()) {
 		for (std::unique_ptr<Animal>& animal : this->animal) {
