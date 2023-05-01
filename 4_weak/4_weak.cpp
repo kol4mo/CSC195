@@ -65,6 +65,7 @@ int main()
             }//inner switch
             break;
         case 5:
+            db.removeAll();
             break;
         case 6:
             break;

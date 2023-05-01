@@ -51,4 +51,24 @@ void Database::Save(const string filename) {
 			animal->write(output);
 		}
 	}
+
+	if (output.is_open()) {
+		output.close();
+	}
+}
+
+void Database::load(const string& filename) {
+	//open file
+	std::ofstream output(filename); //bitwise or
+	//this->RemoveAll();
+
+	if (output.is_open()) {
+		for (std::unique_ptr<Animal>& animal : this->animal) {
+			//animal->write(output);
+		}
+	}
+
+	if (output.is_open()) {
+		output.close();
+	}
 }
