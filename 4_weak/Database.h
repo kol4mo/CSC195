@@ -6,7 +6,7 @@
 class Database
 {
 private:
-	std::list<std::unique_ptr<Animal>> animal;
+	std::list<std::unique_ptr<Animal>> animals;
 
 public:
 	std::unique_ptr<Animal> Create(Animal::eType type);

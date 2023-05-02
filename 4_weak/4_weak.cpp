@@ -68,6 +68,7 @@ int main()
             db.removeAll();
             break;
         case 6:
+            db.load(db.filename);
             break;
         case 7:
             db.Save(db.filename);
