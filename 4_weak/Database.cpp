@@ -30,14 +30,14 @@ void Database::DisplayByName(std::ostream& ostr, std::istream& istr) {
 	ostr << "please enter name: ";
 	istr >> term;
 	for (std::unique_ptr<Animal>& animal : this->animals) {
-		if (animal->name.compare(term) == 0) {
+		if (animal == term) {
 			animal->write(ostr);
 		}
 	}
 }
 void Database::DisplayByType(std::ostream& ostr, Animal::eType type) {
 	for (std::unique_ptr<Animal>& animal : this->animals) {
-		if (animal->GetType() == type) {
+		if (animal == type) {
 			animal->write(ostr);
 		}
 	}
