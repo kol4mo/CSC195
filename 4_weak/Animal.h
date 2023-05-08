@@ -28,6 +28,7 @@ public:
 	// [5-3]
 	friend bool operator == (const std::unique_ptr<Animal>& animal, const std::string& name) { return (name == animal->GetName()); }
 	friend bool operator == (const std::unique_ptr<Animal>& animal, const Animal::eType type) { return (type == animal->GetType()); }
-	friend std::istream& operator >> (std::istream& istr, Animal& animal);
+	friend std::istream& operator >> (std::istream& istr, Animal& animal); 
+	friend std::ostream& operator << (std::ostream& istr, Animal& animal); 
 };
 

@@ -36,6 +36,7 @@ string Animal::GetTypeStr() {
 	}
 }
 
-std::istream& operator >> (std:istream & istr, Animal& animal) {
-
+std::istream& operator >> (std::istream & istr, Animal& animal) {
+	animal.read(std::cout, istr);
+	return istr;
 }
