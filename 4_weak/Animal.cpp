@@ -9,9 +9,9 @@ void Animal::read(std::ostream& ostr, std::istream& istr) {
 }
 
 void Animal::write(std::ostream& ostr) {
-	ostr << "\n\nName: " << this-> name;
-	ostr << "\n Type: " << GetTypeStr();
-	ostr << "\n lifespan: " << this-> lifespan;
+	ostr << "\n\nName: " << this->name;
+	ostr << "\n Type: " << this->GetTypeStr();
+	ostr << "\n lifespan: " << this->lifespan;
 }
 
 void Animal::read(std::ifstream& istr) {
@@ -36,7 +36,22 @@ string Animal::GetTypeStr() {
 	}
 }
 
-std::istream& operator >> (std::istream & istr, Animal& animal) {
+std::istream& operator >> (std::istream& istr, Animal& animal) {
 	animal.read(std::cout, istr);
 	return istr;
+}
+
+std::ostream& operator << (std::ostream& ostr, Animal& animal) {
+	animal.write(ostr);
+	return ostr;
+}
+
+std::ifstream& operator >> (std::ifstream& istr, Animal& animal) {
+	animal.read(istr);
+	return istr;
+}
+
+std::ofstream& operator << (std::ofstream& ostr, Animal& animal) {
+	animal.write(ostr);
+	return ostr;
 }

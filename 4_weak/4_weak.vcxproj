@@ -24,6 +24,7 @@
     <ProjectGuid>{ed7256dd-ac72-4e81-a5b7-6a646408dd70}</ProjectGuid>
     <RootNamespace>My4weak</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>4_Week</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,7 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="4_weak.cpp" />
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Database.cpp" />

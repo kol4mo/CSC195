@@ -22,7 +22,7 @@ void Database::Add(std::unique_ptr<Animal>& animal) {
 }
 void Database::DisplayAll(std::ostream& ostr) {
 	for (std::unique_ptr<Animal>& animal : this->animals) {
-		animal->write(ostr);
+		ostr << animal;
 	}
 }
 void Database::DisplayByName(std::ostream& ostr, std::istream& istr) {
@@ -31,14 +31,14 @@ void Database::DisplayByName(std::ostream& ostr, std::istream& istr) {
 	istr >> term;
 	for (std::unique_ptr<Animal>& animal : this->animals) {
 		if (animal == term) {
-			animal->write(ostr);
+			ostr << animal;
 		}
 	}
 }
 void Database::DisplayByType(std::ostream& ostr, Animal::eType type) {
 	for (std::unique_ptr<Animal>& animal : this->animals) {
 		if (animal == type) {
-			animal->write(ostr);
+			ostr << animal;
 		}
 	}
 }
@@ -48,7 +48,7 @@ void Database::Save(const string filename) {
 
 	if (output.is_open()) {
 		for (std::unique_ptr<Animal>& animal : this->animals) {
-			animal->write(output);
+			output << animal;
 		}
 	}
 
@@ -69,20 +69,20 @@ void Database::load(const string& filename) {
 	this->removeAll();
 
 	if (output.is_open()) {
-			while (!output.eof()) {
-				output >> iType;
+		while (!output.eof()) {
+			output >> iType;
 
-				switch (iType) {
-				case 1:
-					_animal = this->Create(Animal::eType::Fish);
-					break;
-				case 2:
-					_animal = this->Create(Animal::eType::Bird);
-					break;
-				}
-				_animal->read(output);
-				this->Add(_animal);
+			switch (iType) {
+			case 1:
+				_animal = this->Create(Animal::eType::Fish);
+				break;
+			case 2:
+				_animal = this->Create(Animal::eType::Bird);
+				break;
 			}
+			output >> _animal
+			this->Add(_animal);
+		}
 	}
 
 	if (output.is_open()) {
