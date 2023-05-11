@@ -11,7 +11,7 @@ namespace nc
 		vector();
 		vector(size_t capacity);
 		vector(const std::initializer_list<T>& ilist);
-//		vector(const vector& other);
+		vector(const vector& other);
  
 		//deconstructor
 //		~vector();
@@ -27,9 +27,9 @@ namespace nc
 		T& front() { return _elements[0]; }; // first record
 		T& back() {return _elements[_size - 1];}; // last record
 //		T* data();
-//		void push_back(const T& value);
+		void push_back(const T& value);
 		void pop_back() { if (size > 0) _size--; };
-//		void reserve(size_t capacity);
+		void reserve(size_t capacity);
 //		void resize(size_t new_size, const T& value = T{});
 		void clear() { _size = 0; }; // Set so no values are in the list
 //		void swap(vector& other);
@@ -66,5 +66,37 @@ namespace nc
 			_elements[count] = *iter;
 			count++;
 		}
+	}
+	template<typename T>
+	vector<T>::vector(const vector& other) {
+		_size = other.size();
+		_capacity = other.capacity();
+		_elements = new T[_capacity];
+
+		for (size_t count = 0; count < _size; count++) {
+			_elements[count] = other[count];
+		}
+	}
+
+	template<typename T>
+	void vector<T>::push_back(const T& value) {
+		if (_size == _capacity) {
+			reserve(_capacity + 5);
+		}
+		_elements[_size] = value;
+		_size++;
+	}
+	template<typename T>
+	void vector<T>::reserve(size_t capacity) {
+		if (capacity <= _capacity) return;
+
+		T* new_elements = new T[capacity];
+		for (size_t count = 0; count < _size; count++) {
+			new_elements[count] = _elements[count];
+		}
+
+		delete[] _elements;
+		_elements = new_elements;
+		_capacity = capacity;
 	}
 }
