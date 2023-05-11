@@ -58,7 +58,7 @@ void Database::save(const string filename) {
 
 	if (output.is_open()) {
 		for (std::unique_ptr<Animal>& animal : this->animal) {
-			animal->write(output);
+			output << animal;
 		}
 	}
 

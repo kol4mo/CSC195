@@ -8,7 +8,7 @@ namespace nc
 	{
 	public:
 		//Constructors
-		vector() {}
+		vector();
 		vector(size_t capacity);
 		vector(const std::initializer_list<T>& ilist);
 //		vector(const vector& other);
@@ -18,8 +18,8 @@ namespace nc
 
 		//Operators
 //		vector& operator = (const vector& other);
-//		T& operator [] (size_t position);
-//		const T& operator [] (size_t position) const;
+		T& operator [] (size_t position) { return _elements[position]; }
+		const T& operator [] (size_t position) const { return _elements[position]; }
 
 		//methods
 //		T& at(size_t position);
@@ -61,8 +61,10 @@ namespace nc
 		_size = ilist.size();
 		_capacity = _size;
 		_elements = new T[_capacity];
-		for (int i = 0; i < _capacity; i++) {
-			_elements[i] = ilist[i];
+		size_t count = 0;
+		for (auto iter = ilist.begin(); iter != ilist.end(); iter++) {
+			_elements[count] = *iter;
+			count++;
 		}
 	}
 }
